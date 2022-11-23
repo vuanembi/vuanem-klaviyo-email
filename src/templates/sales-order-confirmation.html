@@ -1,30 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    </head>
-    <body class="flex justify-center">
-        <div class="container mx-auto px-5 space-y-5 bg-cyan-50">
+<extends src="src/layouts/main.html">
+    <block name="template">
+        <div class="container mx-auto mt-5 p-5 space-y-5 bg-cyan-50">
             <h1 class="text-2xl font-bold">Xác nhận Đơn hàng</h1>
             <hr />
             <div class="space-y-1">
                 <div class="flex justify-between">
                     <p>Email:</p>
-                    <p>{{ email }}</p>
+                    <p>@{{ email }}</p>
                 </div>
                 <div class="flex justify-between">
                     <p>Phone:</p>
-                    <p>{{ person.phone_number }}</p>
+                    <p>@{{ person.phone_number }}</p>
                 </div>
                 <div class="flex justify-between">
                     <p>Hạng khách hàng:</p>
-                    <p>{{ person.loyalty }}</p>
+                    <p>@{{ person.loyalty }}</p>
                 </div>
                 <div class="flex justify-between">
                     <p>Mã đơn hàng:</p>
-                    <p>{{ event.tranid }}</p>
+                    <p>@{{ event.tranid }}</p>
                 </div>
             </div>
             <div class="flex flex-col">
@@ -39,14 +33,14 @@
                     <tbody>
                         {% for item in event.items %}
                         <tr>
-                            <td class="text-left">{{ item.name }}</td>
-                            <td class="text-right">{{ item.quantity }}</td>
-                            <td class="text-right">{{ item.amount }}</td>
+                            <td class="text-left">@{{ item.name }}</td>
+                            <td class="text-right">@{{ item.quantity }}</td>
+                            <td class="text-right">@{{ item.amount }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
-    </body>
-</html>
+    </block>
+</extends>
