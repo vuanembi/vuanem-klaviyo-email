@@ -181,7 +181,4 @@ out
 .yarn/install-state.gz
 .pnp.*
 
-dist/*
-!dist/.gitkeep
-build/*
-!build/.gitkeep
+build*
