@@ -10,15 +10,34 @@
         />
         <meta name="color-scheme" content="light dark" />
         <meta name="supported-color-schemes" content="light dark" />
+        <!--[if mso]>
+            <noscript>
+                <xml>
+                    <o:OfficeDocumentSettings xmlns:o="urn:schemas-microsoft-com:office:office">
+                        <o:PixelsPerInch>96</o:PixelsPerInch>
+                    </o:OfficeDocumentSettings>
+                </xml>
+            </noscript>
+            <style>
+                td,
+                th,
+                div,
+                p,
+                a,
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6 {
+                    font-family: 'Segoe UI', sans-serif;
+                    mso-line-height-rule: exactly;
+                }
+            </style>
+        <![endif]-->
         <if condition="page.title">
             <title>{{{ page.title }}}</title>
         </if>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
-            rel="stylesheet"
-        />
         <style>
             {{{ page.css }}}
         </style>
@@ -32,9 +51,10 @@
             aria-roledescription="email"
             aria-label="{{{ page.title || '' }}}"
             lang="{{ page.language || 'en' }}"
-            class="max-w-screen-sm"
+            class="max-w-[700px]"
         >
             <block name="template"></block>
         </div>
+        <p class="px-5 text-sm">{% unsubscribe %}</p>
     </body>
 </html>

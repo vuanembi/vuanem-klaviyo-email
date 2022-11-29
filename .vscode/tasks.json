@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Upload GCS",
+            "type": "shell",
+            "command": "gsutil cp src/assets/${fileBasename} gs://vuanem-email-assets/ && gsutil setmeta -h \"Cache-Control:public, max-age=0\" gs://vuanem-email-assets/${fileBasename}",
+            "problemMatcher": []
+        }
+    ]
+}
