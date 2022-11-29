@@ -44,8 +44,9 @@
         <block name="head"></block>
     </head>
     <body
-        class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || '' }}"
+        class="m-0 p-0 max-w-[700px] w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || '' }}"
     >
+        <component src="src/components/header.html"> </component>
         <div
             role="article"
             aria-roledescription="email"
